@@ -19,8 +19,9 @@ export default function Header() {
   const toggleDropMobile = () => {
     setMobileDrop(!mobileDrop)
   }
+
   return (
-    <header className="w-full flex flex-row justify-center items-center bg-amber-700 min-h-[70px]">
+    <header className="w-full flex flex-row justify-center items-center bg-zinc-800 text-white min-h-[70px]">
       <div className="container mx-auto px-4 md:flex items-center gap-6">
         {/* Mobile logo and hamburger */}
         <div className="flex items-center justify-between md:w-auto w-full">
@@ -36,10 +37,10 @@ export default function Header() {
         {/* Dropdown Mobile Navbar */}
        
         <div className="hidden md:flex md:flex-row  items-center justify-start md:space-x-1 pb-3 md:pb-0 navigation-menu">
-          <Link href="/" className="py-2 px-3 block">Home</Link>
-          <Link href="about" className="py-2 px-3 block">About</Link>
+          <Link href="/" className="py-2 px-3 block hover:bg-[#B85B0F] rounded-sm">Home</Link>
+          <Link href="about" className="py-2 px-3 block hover:bg-[#B85B0F] rounded-sm">About</Link>
           <div className="relative">
-            <button type="button" className="dropdown-toggle px-3 py-2 hover:bg-sky-800 flex items-center gap-2 rounded">
+            <button type="button" className="dropdown-toggle px-3 py-2 hover:bg-[#B85B0F] flex items-center gap-2 rounded">
               <span className="ponter-events-none select-none">Resources</span>
               <svg  onClick={toggleDropMobile}  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3 ponter-events-none">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -47,16 +48,16 @@ export default function Header() {
             </button>
             {/* Dropdown menu */}
             {mobileDrop &&
-            <div className="dropdown-menu absolute bg-gray-700 rounded-b-lg pb-2 w-48">
-              <Link href="#" className="block px-6 py-2 hover:bg-sky-800">Govt Agencies</Link>
-              <Link href="#" className="block px-6 py-2 hover:bg-sky-800">State Agencies</Link>
-              <Link href="#" className="block px-6 py-2 hover:bg-sky-800">Tracking Apps</Link>
-              <Link href="#" className="block px-6 py-2 hover:bg-sky-800">Social Media Accounts</Link>
+            <div className="dropdown-menu absolute bg-zinc-800 rounded-b-lg pb-2 w-48">
+              <Link href="#" className="block px-6 py-2 hover:bg-[#B85B0F]">Govt Agencies</Link>
+              <Link href="#" className="block px-6 py-2 hover:bg-[#B85B0F]">State Agencies</Link>
+              <Link href="#" className="block px-6 py-2 hover:bg-[#B85B0F]">Tracking Apps</Link>
+              <Link href="#" className="block px-6 py-2 hover:bg-[#B85B0F]">Social Media Accounts</Link>
             </div>
             }
           </div>
-          <Link href="about" className="py-2 px-3 block">Prevention</Link>
-          <Link href="about" className="py-2 px-3 block">Blog</Link>
+          <Link href="about" className="py-2 px-3 block hover:bg-[#B85B0F] rounded-sm">Prevention</Link>
+          <Link href="about" className="py-2 px-3 block hover:bg-[#B85B0F] rounded-sm">Blog</Link>
         </div>
 
         {menu && /*mobile hidden until click*/
@@ -64,7 +65,7 @@ export default function Header() {
           <Link href="/" className="py-2 px-3 block">Home</Link>
           <Link href="about" className="py-2 px-3 block">About</Link>
           <div className="relative">
-            <button onClick={toggleDropLarge}  type="button" className="dropdown-toggle px-3 py-2 hover:bg-sky-800 flex items-center gap-2 rounded">
+            <button onClick={toggleDropLarge}  type="button" className="dropdown-toggle px-3 py-2 hover:bg-zinc-800 flex items-center gap-2 rounded">
               <span className="ponter-events-none select-none">Resources</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3 ponter-events-none">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -72,11 +73,11 @@ export default function Header() {
             </button>
             {/* Dropdown menu */}
             { dropdown && 
-            <div className="dropdown-menu absolute bg-gray-700 rounded-b-lg pb-2 w-48">
-              <Link href="#" className="block px-6 py-2 hover:bg-sky-800">Govt Agencies</Link>
-              <Link href="#" className="block px-6 py-2 hover:bg-sky-800">State Agencies</Link>
-              <Link href="#" className="block px-6 py-2 hover:bg-sky-800">Tracking Apps</Link>
-              <Link href="#" className="block px-6 py-2 hover:bg-sky-800">Social Media Accounts</Link>
+            <div className="dropdown-menu absolute bg-zinc-800 rounded-b-lg pb-2 w-48">
+              <Link href="#" className="block px-6 py-2 hover:bg-[#B85B0F]">Govt Agencies</Link>
+              <Link href="#" className="block px-6 py-2 hover:bg-[#B85B0F]">State Agencies</Link>
+              <Link href="#" className="block px-6 py-2 hover:bg-[#B85B0F]">Tracking Apps</Link>
+              <Link href="#" className="block px-6 py-2 hover:bg-[#B85B0F]">Social Media Accounts</Link>
             </div>
 }
           </div>
@@ -89,3 +90,5 @@ export default function Header() {
   )
 }
 
+
+/* Add outside click to close mobile menu, to close either dropdown menu */
